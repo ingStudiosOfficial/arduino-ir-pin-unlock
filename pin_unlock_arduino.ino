@@ -2,6 +2,9 @@
 #include <IRremote.h>
 #include <Servo.h>
 
+// General setup
+bool debugMode = true;
+
 // Pin code setup
 const int pinLength = 4;
 int pinCode[pinLength] = {};
@@ -44,11 +47,13 @@ void setup() {
   // Generate the random pin code
   generateRandomCode();
   
-  Serial.print("Pin code generated: ");
-  for (int i = 0; i < pinLength; i++) {
-    Serial.print(pinCode[i]);
-    if (i < pinLength - 1) {
-      Serial.print(", ");
+  if (debugMode == true) {
+    Serial.print("Pin code generated: ");
+    for (int i = 0; i < pinLength; i++) {
+      Serial.print(pinCode[i]);
+      if (i < pinLength - 1) {
+        Serial.print(", ");
+      }
     }
   }
   Serial.println("");
@@ -98,7 +103,10 @@ void getUserInputCode() {
     while (true) {
       if (irrecv.decode(&results)) {
         if (results.value != 0xFFFFFFFF) {  // Ignore repeat codes
-          Serial.println(results.value, HEX);
+          if (debugMode == true) {
+            Serial.println(results.value, HEX);
+          }
+
           int decodedCode = decodePressedButton(results.value);
           Serial.print("Decoded code: ");
           Serial.println(decodedCode);
