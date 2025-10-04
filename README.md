@@ -25,3 +25,5 @@ A **pin unlock system** using an IR remote, an IR receiver, a servo motor, and a
 <img src="https://github.com/ingStudiosOfficial/arduino-ir-pin-unlock/blob/main/arduino_pin_unlock_diagram.png?raw=true">
 
 https://github.com/user-attachments/assets/dadbd2c9-c820-4a98-9cfe-cea3e1b52d28
+
+©2025 Ethan Lee
