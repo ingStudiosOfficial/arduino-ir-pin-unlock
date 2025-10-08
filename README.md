@@ -16,6 +16,10 @@ A **pin unlock system** using an IR remote, an IR receiver, a servo motor, and a
 8. **4 resistors**
 9. **An Arduino Uno board with a USB-A to USB-B cable**
 
+## Libraries to include
+1. **<IRremote.h> (Sketch > Include Library > Manage Libraries... > IRremote *v2.6.0*)**
+2. **<Servo.h>**
+
 ## Code Setup
 1. **Use the template .ino code and configure the correct pins**
 2. **Depending on your IR remote, the hexidecimal signal may be different, test and configure the signals in the decodePressedButton() function**
