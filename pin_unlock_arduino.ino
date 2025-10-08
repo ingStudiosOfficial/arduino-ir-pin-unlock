@@ -3,7 +3,7 @@
 #include <Servo.h>
 
 // General setup
-bool debugMode = true;
+bool debugMode = false;
 
 // Pin code setup
 const int pinLength = 4;
@@ -31,6 +31,7 @@ void setup() {
 
   // Attach the servo
   doorlock.attach(doorlockPin);
+  doorlock.write(120);
 
   // Set the LED pins to output
   for (int i = 0; i < pinLength; i++) {
@@ -152,5 +153,5 @@ void verifyInputtedCode() {
 }
 
 void openDoor() {
-  doorlock.write(180);
+  doorlock.write(0);
 }
